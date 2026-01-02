@@ -1,0 +1,31 @@
+# Wolf-Arec P - Especificaciones
+
+Wolf-Arc P es el cable híbrido que permite transportar simultáneamente energía y datos sin interferencias ni pérdida de integridad.
+
+## Características eléctricas
+
+- Corriente soportada: hasta 60 A  
+- Caída de tensión máxima: 1 V  
+- Caída típica a 20 A: 0.24 V  
+- Caída típica a 60 A: 0.72 V  
+- Resistencia interna cable envejecido: 12 mΩ
+
+## Características de comunicación
+
+- BER (Bit Error Rate): 0  
+- Retransmisiones: 0  
+- QoS: 95–96 %  
+- Latencia típica: 3 ms  
+- Integridad de datos validada con potencia simultánea
+
+## Seguridad
+
+- Aislado térmica y eléctricamente  
+- Compatible con módulos WolfEnergy y WolfMicro  
+- No requiere configuración ni software adicional
+
+## Modularidad
+
+- Conector universal  
+- Autodetección de rol  
+- Plug & Operate
