@@ -1,6 +1,6 @@
 # Resultados – Integridad de Datos con Potencia Simultánea
 
-Estas pruebas validan que el sistema WOLF ARC P mantiene la integridad de datos incluso cuando se transmiten 20–60 A por el mismo cable Wolf-Arc P.
+Estas pruebas validan que el sistema WOLF ARC  mantiene la integridad de datos incluso cuando se transmiten 20–60 A por el mismo cable Wolf-Arc P.
 
 ---
 
