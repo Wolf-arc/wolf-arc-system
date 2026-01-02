@@ -1,0 +1,7 @@
+simulaciones/cable/README.md
+# Simulación del Cable WolfLinkP
+
+Pruebas de caída de tensión, resistencia interna y comportamiento eléctrico bajo 20–60 A.
+ # Integridad de Datos
+
+Pruebas de BER, QoS, latencia y retransmisiones con potencia simultánea. 
