@@ -1,0 +1,25 @@
+# Autoconfiguración WOLF ARC
+
+La autoconfiguración es el núcleo del sistema WOLF ARC.  
+Permite que cualquier módulo —energía o cómputo— se integre automáticamente sin intervención del usuario.
+
+## Funciones principales
+
+- Identificación automática del tipo de módulo (energía / cómputo)
+- Negociación de rol dentro del sistema
+- Detección de topología sin configuraciones
+- Ajuste dinámico de prioridades
+- Integración inmediata al conectarse (Plug & Operate)
+
+## Ventajas
+
+- No requiere software externo
+- No necesita drivers ni instaladores
+- Permite mover módulos entre sistemas sin apagar
+- Reduce errores humanos
+- Aumenta la resiliencia del sistema
+
+## Filosofía
+
+La autoconfiguración convierte a WOLF ARC en un sistema vivo:  
+cada módulo entiende su función y se adapta al entorno sin instrucciones adicionales.
