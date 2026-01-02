@@ -61,7 +61,7 @@ No se detectaron errores ni degradación de calidad.
 
 ## 5. Conclusión general
 
-El cable WolfLinkP cumple con todos los requisitos eléctricos y de comunicación:
+El cable Wolf-Arc P cumple con todos los requisitos eléctricos y de comunicación:
 
 - Caída de tensión dentro de los márgenes  
 - Resistencia interna estable incluso tras 1M ciclos  
