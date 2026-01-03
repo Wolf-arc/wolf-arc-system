@@ -1,0 +1,93 @@
+
+
+
+
+# **WOLF‑ARC — Pruebas de Validación Extrema (VOLCÁN y TANQUE)**
+
+Este repositorio contiene los **datos reales** generados por el sistema WOLF‑ARC C/P durante dos escenarios extremos de validación: **VOLCÁN** y **TANQUE**.  
+Los archivos publicados son **cajas negras reales** exportadas directamente del sistema durante la simulación.
+
+El objetivo es mostrar cómo el firmware reacciona ante condiciones donde el hardware físico no puede sobrevivir, y cómo registra cada evento de forma trazable.
+
+---
+
+## 🔥 **Escenario VOLCÁN**  
+Archivo: **`wolf_arcC_blackbox_volcan.csv`**
+
+Simulación equivalente a una exposición térmica extrema:
+
+- Temperatura ascendente desde **25 °C hasta ~95 °C**  
+- Gradiente térmico ΔT controlado  
+- Corriente constante de carga  
+- Condiciones imposibles para un pack físico
+
+### **Eventos registrados por el firmware WOLF‑ARC C**
+- **PRECHARGE** → **ON_NORMAL** → **ON_DERATED** → **FAULT_OT**  
+- Derating activado alrededor de **37 °C**  
+- Protección térmica **OT** activada alrededor de **45 °C**  
+- Reducción progresiva de corriente permitida (`i_allow`)  
+- Registro completo de:
+  - temperatura hotspot  
+  - delta térmico  
+  - estado  
+  - fallo  
+  - SoC  
+  - SoH  
+
+### **Conclusión del escenario VOLCÁN**
+El firmware actúa antes de que el hardware alcance sus límites físicos, reduciendo corriente, entrando en derating y finalmente cortando por OT.  
+El hardware “muere” por temperatura extrema, **no por fallo del firmware**.
+
+---
+
+## 🛡 **Escenario TANQUE**  
+Archivo: **`wolf_arcC_blackbox_tanque.csv`**
+
+Simulación equivalente a un entorno de envejecimiento acelerado:
+
+- Temperatura estable alrededor de **25 °C**  
+- Corriente constante  
+- Tiempo prolongado en PRECHARGE  
+- Comportamiento de larga duración
+
+### **Eventos registrados por el firmware WOLF‑ARC C**
+- Entrada en **PRECHARGE**  
+- Transición a **ON_NORMAL**  
+- Activación de **FAULT_PRECHARGE_TIMEOUT** a los 60 s  
+- Registro completo de:
+  - estado  
+  - fallo  
+  - temperatura  
+  - SoC  
+  - SoH  
+
+### **Conclusión del escenario TANQUE**
+El firmware detecta correctamente un timeout de precharge y entra en **FAULT_LATCHED**.  
+El sistema se mantiene estable hasta que el firmware decide bloquearlo por seguridad.
+
+---
+
+## 🔌 **Integridad del cable (WOLF‑ARC P)**  
+Archivo: **`wolf_arcP_volcan.csv`**
+
+Este archivo registra el estado del cable durante el escenario volcán:
+
+- `cable_ok = True` durante toda la fase segura  
+- `fault_cable = True` cuando la temperatura supera el umbral crítico  
+- Sin falsos positivos  
+- Sin corrupción de datos  
+
+---
+
+## 📌 **Objetivo de esta publicación**
+
+Los CSV publicados permiten analizar:
+
+- cómo reacciona el firmware ante condiciones extremas  
+- cómo se registran los eventos en caja negra  
+- cómo se detectan fallos térmicos y eléctricos  
+- cómo se comporta el sistema cuando el hardware está al límite  
+
+Estos datos forman parte del proceso de validación del sistema WOLF‑ARC.
+
+---
